@@ -69,7 +69,7 @@ export default function loginHandlerFactory(
     }
 
     const authVerification: AuthVerification = {
-      nonce: client.generateRandomNonce(),
+      nonce: opts.authorizationParams.nonce || client.generateRandomNonce(),
       state: encodeState(stateValue)
     };
 
